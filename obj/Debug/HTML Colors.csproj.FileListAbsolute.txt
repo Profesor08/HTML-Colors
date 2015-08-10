@@ -1,0 +1,18 @@
+c:\users\profesor08\documents\visual studio 2013\Projects\HTML Colors\HTML Colors\bin\Debug\HTML Colors.exe
+c:\users\profesor08\documents\visual studio 2013\Projects\HTML Colors\HTML Colors\bin\Debug\HTML Colors.pdb
+c:\users\profesor08\documents\visual studio 2013\Projects\HTML Colors\HTML Colors\obj\Debug\HTML Colors.csprojResolveAssemblyReference.cache
+c:\users\profesor08\documents\visual studio 2013\Projects\HTML Colors\HTML Colors\obj\Debug\HTML_Colors.Form1.resources
+c:\users\profesor08\documents\visual studio 2013\Projects\HTML Colors\HTML Colors\obj\Debug\HTML_Colors.Properties.Resources.resources
+c:\users\profesor08\documents\visual studio 2013\Projects\HTML Colors\HTML Colors\obj\Debug\HTML Colors.csproj.GenerateResource.Cache
+c:\users\profesor08\documents\visual studio 2013\Projects\HTML Colors\HTML Colors\obj\Debug\HTML Colors.exe
+c:\users\profesor08\documents\visual studio 2013\Projects\HTML Colors\HTML Colors\obj\Debug\HTML Colors.pdb
+c:\users\profesor08\documents\visual studio 2013\Projects\HTML Colors\HTML Colors\obj\Debug\HTML_Colors.ScreenColor.resources
+C:\Users\Profesor08\Documents\Visual Studio 2013\Projects\HTML Colors\HTML-Colors\obj\Debug\HTML Colors.exe
+C:\Users\Profesor08\Documents\Visual Studio 2013\Projects\HTML Colors\HTML-Colors\obj\Debug\HTML Colors.pdb
+C:\Users\Profesor08\Documents\Visual Studio 2013\Projects\HTML Colors\HTML-Colors\bin\Debug\HTML Colors.exe
+C:\Users\Profesor08\Documents\Visual Studio 2013\Projects\HTML Colors\HTML-Colors\bin\Debug\HTML Colors.pdb
+C:\Users\Profesor08\Documents\Visual Studio 2013\Projects\HTML Colors\HTML-Colors\obj\Debug\HTML Colors.csprojResolveAssemblyReference.cache
+C:\Users\Profesor08\Documents\Visual Studio 2013\Projects\HTML Colors\HTML-Colors\obj\Debug\HTML_Colors.Form1.resources
+C:\Users\Profesor08\Documents\Visual Studio 2013\Projects\HTML Colors\HTML-Colors\obj\Debug\HTML_Colors.Properties.Resources.resources
+C:\Users\Profesor08\Documents\Visual Studio 2013\Projects\HTML Colors\HTML-Colors\obj\Debug\HTML_Colors.ScreenColor.resources
+C:\Users\Profesor08\Documents\Visual Studio 2013\Projects\HTML Colors\HTML-Colors\obj\Debug\HTML Colors.csproj.GenerateResource.Cache
