@@ -50,5 +50,28 @@ namespace HTML_Colors
             this.ShowDialog();
         }
 
+        private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
+        {
+            Color color = GetClickedPixel(e.Location);
+            this.curentColor.BackColor = color;
+            this.colorHex.Text = "#" + color.R.ToString("X2") + color.G.ToString("X2") + color.B.ToString("X2");
+
+            int X = e.Location.X;
+            int Y = e.Location.Y;
+
+            if (Y > this.Height - 32)
+            {
+                Y -= 60;
+            }
+
+            if (X > this.Width - 70)
+            {
+                X -= 70;
+            }
+
+            this.colorHex.Location = new Point(X, Y + 18);
+            this.curentColor.Location = new Point(X, Y + 32);
+        }
+
     }
 }
