@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -29,6 +30,7 @@ namespace HTML_Colors
             this.colorNames.DisplayMember = "Key";
             this.colorNames.ValueMember = "Value";
             this.UpdateColor();
+            this.LoadSave();
 
         }
 
@@ -175,6 +177,37 @@ namespace HTML_Colors
             if (result == DialogResult.OK)
             {
                 this.UpdateColor(this.colorPicker.Color);
+            }
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            RegistryKey key = Registry.CurrentUser.OpenSubKey("Software\\HTML-Colors", true);
+
+            if (key == null)
+            {
+                key = Registry.CurrentUser.CreateSubKey("Software\\HTML-Colors");
+            }
+
+            key.SetValue("Red", this.Red);
+            key.SetValue("Green", this.Green);
+            key.SetValue("Blue", this.Blue);
+        }
+
+        private void LoadSave()
+        {
+            using (RegistryKey key = Registry.CurrentUser.OpenSubKey("Software\\HTML-Colors", true))
+            {
+                if (key == null)
+                {
+                    return;
+                }
+
+                this.Red = (int)key.GetValue("Red", 0, RegistryValueOptions.None);
+                this.Green = (int)key.GetValue("Green", 0, RegistryValueOptions.None);
+                this.Blue = (int)key.GetValue("Blue", 0, RegistryValueOptions.None);
+
+                this.UpdateColor();
             }
         }
 

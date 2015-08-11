@@ -52,9 +52,9 @@
             this.copyHTMLCodeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.alwaysOnTopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.moreColorsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.moreColorsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.colorPicker = new System.Windows.Forms.ColorDialog();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBlue)).BeginInit();
@@ -79,7 +79,7 @@
             this.groupBox1.Controls.Add(this.numericGreen);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.numericRed);
-            this.groupBox1.Location = new System.Drawing.Point(13, 33);
+            this.groupBox1.Location = new System.Drawing.Point(-1, 22);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(138, 236);
             this.groupBox1.TabIndex = 0;
@@ -202,7 +202,7 @@
             this.groupBox2.Controls.Add(this.colorNames);
             this.groupBox2.Controls.Add(this.colorCode);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Location = new System.Drawing.Point(157, 33);
+            this.groupBox2.Location = new System.Drawing.Point(136, 22);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(112, 236);
             this.groupBox2.TabIndex = 11;
@@ -286,7 +286,7 @@
             this.helpToolStripMenuItem});
             this.mainMenu.Location = new System.Drawing.Point(0, 0);
             this.mainMenu.Name = "mainMenu";
-            this.mainMenu.Size = new System.Drawing.Size(283, 24);
+            this.mainMenu.Size = new System.Drawing.Size(248, 24);
             this.mainMenu.TabIndex = 12;
             this.mainMenu.Text = "mainMenu";
             // 
@@ -321,6 +321,13 @@
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
+            // moreColorsToolStripMenuItem
+            // 
+            this.moreColorsToolStripMenuItem.Name = "moreColorsToolStripMenuItem";
+            this.moreColorsToolStripMenuItem.Size = new System.Drawing.Size(84, 20);
+            this.moreColorsToolStripMenuItem.Text = "More Colors";
+            this.moreColorsToolStripMenuItem.Click += new System.EventHandler(this.moreColorsToolStripMenuItem_Click);
+            // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -336,18 +343,11 @@
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
-            // moreColorsToolStripMenuItem
-            // 
-            this.moreColorsToolStripMenuItem.Name = "moreColorsToolStripMenuItem";
-            this.moreColorsToolStripMenuItem.Size = new System.Drawing.Size(84, 20);
-            this.moreColorsToolStripMenuItem.Text = "More Colors";
-            this.moreColorsToolStripMenuItem.Click += new System.EventHandler(this.moreColorsToolStripMenuItem_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(283, 277);
+            this.ClientSize = new System.Drawing.Size(248, 258);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.mainMenu);
@@ -357,6 +357,7 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HTML Colors";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBlue)).EndInit();
