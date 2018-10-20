@@ -5,8 +5,10 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Imaging;
+using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -211,5 +213,107 @@ namespace HTML_Colors
             }
         }
 
+        string oldColor = "#000000";
+
+        private void colorCode_TextChanged(object sender, EventArgs e)
+        {
+            TextBox code = (TextBox)sender;
+
+            //MessageBox.Show(this.inputMatchColorHex(code.Text).ToString());
+
+            if (code.Text.Length == 0)
+            {
+                code.Text = "#";
+            }
+
+            if (!this.inputMatchColorHex(code.Text))
+            {
+                code.Text = oldColor;
+            }
+        }
+
+        private bool inputMatchColorHex(string color)
+        {
+            return Regex.IsMatch(color, @"^[#]?([0-9a-fA-F]{3,3}|[0-9a-fA-F]{6,6})$");
+        }
+
+        private void colorCode_KeyPressed(object sender, KeyPressEventArgs e)
+        {
+            /*TextBox code = (TextBox)sender;
+
+            if (code.Text.Length == 7)
+            {
+                e.Handled = true;
+            }
+
+            if (code.Text.Length == 0 && e.KeyChar.ToString() != "#")
+            {
+                code.Text = "#";
+                e.Handled = true;
+            }
+
+            if (!Regex.IsMatch(e.KeyChar.ToString(), @"[0-9a-fA-F]"))
+            {
+                e.Handled = true;
+            }*/
+        }
+
+        private string getHSLColor()
+        {
+            float _R = (this.Red / 255f);
+            float _G = (this.Green / 255f);
+            float _B = (this.Blue / 255f);
+
+            float _Min = Math.Min(Math.Min(_R, _G), _B);
+            float _Max = Math.Max(Math.Max(_R, _G), _B);
+            float _Delta = _Max - _Min;
+
+            float H = 0;
+            float S = 0;
+            float L = (float)((_Max + _Min) / 2.0f);
+
+            if (_Delta != 0)
+            {
+                if (L < 0.5f)
+                {
+                    S = (float)(_Delta / (_Max + _Min));
+                }
+                else
+                {
+                    S = (float)(_Delta / (2.0f - _Max - _Min));
+                }
+
+
+                if (_R == _Max)
+                {
+                    H = (_G - _B) / _Delta;
+                }
+                else if (_G == _Max)
+                {
+                    H = 2f + (_B - _R) / _Delta;
+                }
+                else if (_B == _Max)
+                {
+                    H = 4f + (_R - _G) / _Delta;
+                }
+            }
+
+            return "hsl(" + H.ToString(CultureInfo.InvariantCulture) + ", " + S.ToString(CultureInfo.InvariantCulture) + ", " + L.ToString(CultureInfo.InvariantCulture) + ")";
+        }
+
+        private string getRGBAColor()
+        {
+            return "rgba(" + this.Red + ", " + this.Blue + ", " + this.Green + ", 1)";
+        }
+
+        private void buttonCopyRGBA_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(getRGBAColor());
+        }
+
+        private void buttonCopyHSL_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(getHSLColor());
+        }
     }
 }

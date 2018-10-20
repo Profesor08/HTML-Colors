@@ -56,6 +56,8 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.colorPicker = new System.Windows.Forms.ColorDialog();
+            this.buttonCopyRGBA = new System.Windows.Forms.Button();
+            this.buttonCopyHSL = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBlue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackGreen)).BeginInit();
@@ -81,7 +83,7 @@
             this.groupBox1.Controls.Add(this.numericRed);
             this.groupBox1.Location = new System.Drawing.Point(-1, 22);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(138, 236);
+            this.groupBox1.Size = new System.Drawing.Size(138, 264);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
@@ -93,7 +95,7 @@
             this.trackBlue.Name = "trackBlue";
             this.trackBlue.Orientation = System.Windows.Forms.Orientation.Vertical;
             this.trackBlue.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.trackBlue.Size = new System.Drawing.Size(35, 183);
+            this.trackBlue.Size = new System.Drawing.Size(35, 211);
             this.trackBlue.TabIndex = 10;
             this.trackBlue.TickFrequency = 10;
             this.trackBlue.ValueChanged += new System.EventHandler(this.trackBlue_ValueChanged);
@@ -106,7 +108,7 @@
             this.trackGreen.Name = "trackGreen";
             this.trackGreen.Orientation = System.Windows.Forms.Orientation.Vertical;
             this.trackGreen.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.trackGreen.Size = new System.Drawing.Size(35, 183);
+            this.trackGreen.Size = new System.Drawing.Size(35, 211);
             this.trackGreen.TabIndex = 9;
             this.trackGreen.TickFrequency = 10;
             this.trackGreen.ValueChanged += new System.EventHandler(this.trackGreen_ValueChanged);
@@ -119,7 +121,7 @@
             this.trackRed.Name = "trackRed";
             this.trackRed.Orientation = System.Windows.Forms.Orientation.Vertical;
             this.trackRed.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.trackRed.Size = new System.Drawing.Size(35, 183);
+            this.trackRed.Size = new System.Drawing.Size(35, 211);
             this.trackRed.TabIndex = 8;
             this.trackRed.TickFrequency = 10;
             this.trackRed.ValueChanged += new System.EventHandler(this.trackRed_ValueChanged);
@@ -195,6 +197,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.buttonCopyHSL);
+            this.groupBox2.Controls.Add(this.buttonCopyRGBA);
             this.groupBox2.Controls.Add(this.screenColor);
             this.groupBox2.Controls.Add(this.copyColor);
             this.groupBox2.Controls.Add(this.previewColor);
@@ -204,13 +208,13 @@
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Location = new System.Drawing.Point(136, 22);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(112, 236);
+            this.groupBox2.Size = new System.Drawing.Size(112, 264);
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
             // 
             // screenColor
             // 
-            this.screenColor.Location = new System.Drawing.Point(57, 206);
+            this.screenColor.Location = new System.Drawing.Point(57, 234);
             this.screenColor.Name = "screenColor";
             this.screenColor.Size = new System.Drawing.Size(49, 23);
             this.screenColor.TabIndex = 6;
@@ -220,11 +224,11 @@
             // 
             // copyColor
             // 
-            this.copyColor.Location = new System.Drawing.Point(6, 206);
+            this.copyColor.Location = new System.Drawing.Point(6, 234);
             this.copyColor.Name = "copyColor";
             this.copyColor.Size = new System.Drawing.Size(45, 23);
             this.copyColor.TabIndex = 5;
-            this.copyColor.Text = "Copy";
+            this.copyColor.Text = "Copy 📋";
             this.copyColor.UseVisualStyleBackColor = true;
             this.copyColor.Click += new System.EventHandler(this.copyColor_Click);
             // 
@@ -263,10 +267,11 @@
             this.colorCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.colorCode.Location = new System.Drawing.Point(6, 24);
             this.colorCode.Name = "colorCode";
-            this.colorCode.ReadOnly = true;
             this.colorCode.Size = new System.Drawing.Size(100, 30);
             this.colorCode.TabIndex = 1;
             this.colorCode.Text = "#000000";
+            this.colorCode.TextChanged += new System.EventHandler(this.colorCode_TextChanged);
+            this.colorCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.colorCode_KeyPressed);
             // 
             // label4
             // 
@@ -343,11 +348,31 @@
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
+            // buttonCopyRGBA
+            // 
+            this.buttonCopyRGBA.Location = new System.Drawing.Point(6, 205);
+            this.buttonCopyRGBA.Name = "buttonCopyRGBA";
+            this.buttonCopyRGBA.Size = new System.Drawing.Size(45, 23);
+            this.buttonCopyRGBA.TabIndex = 7;
+            this.buttonCopyRGBA.Text = "RGB";
+            this.buttonCopyRGBA.UseVisualStyleBackColor = true;
+            this.buttonCopyRGBA.Click += new System.EventHandler(this.buttonCopyRGBA_Click);
+            // 
+            // buttonCopyHSL
+            // 
+            this.buttonCopyHSL.Location = new System.Drawing.Point(58, 205);
+            this.buttonCopyHSL.Name = "buttonCopyHSL";
+            this.buttonCopyHSL.Size = new System.Drawing.Size(48, 23);
+            this.buttonCopyHSL.TabIndex = 8;
+            this.buttonCopyHSL.Text = "HSL";
+            this.buttonCopyHSL.UseVisualStyleBackColor = true;
+            this.buttonCopyHSL.Click += new System.EventHandler(this.buttonCopyHSL_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(248, 258);
+            this.ClientSize = new System.Drawing.Size(248, 285);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.mainMenu);
@@ -405,6 +430,8 @@
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem moreColorsToolStripMenuItem;
         private System.Windows.Forms.ColorDialog colorPicker;
+        private System.Windows.Forms.Button buttonCopyHSL;
+        private System.Windows.Forms.Button buttonCopyRGBA;
     }
 }
 
