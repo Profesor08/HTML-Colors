@@ -12,8 +12,13 @@ namespace HTML_Colors
         /// Главная точка входа для приложения.
         /// </summary>
         [STAThread]
+
         static void Main()
         {
+
+            if (Environment.OSVersion.Version.Major >= 6)
+                SetProcessDPIAware();
+
             Application.EnableVisualStyles();
             try
             {
@@ -25,5 +30,8 @@ namespace HTML_Colors
                 MessageBox.Show(ex.Message);
             }
         }
+
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        private static extern bool SetProcessDPIAware();
     }
 }

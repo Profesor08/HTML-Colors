@@ -303,7 +303,7 @@ namespace HTML_Colors
 
         private string getRGBAColor()
         {
-            return "rgba(" + this.Red + ", " + this.Blue + ", " + this.Green + ", 1)";
+            return "rgba(" + this.Red + ", " + this.Green + ", " + this.Blue + ", 1)";
         }
 
         private void buttonCopyRGBA_Click(object sender, EventArgs e)

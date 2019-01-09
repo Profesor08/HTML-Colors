@@ -16,12 +16,3 @@ C:\Users\Profesor08\Documents\Visual Studio 2013\Projects\HTML Colors\HTML-Color
 C:\Users\Profesor08\Documents\Visual Studio 2013\Projects\HTML Colors\HTML-Colors\obj\Release\HTML_Colors.Properties.Resources.resources
 C:\Users\Profesor08\Documents\Visual Studio 2013\Projects\HTML Colors\HTML-Colors\obj\Release\HTML_Colors.ScreenColor.resources
 C:\Users\Profesor08\Documents\Visual Studio 2013\Projects\HTML Colors\HTML-Colors\obj\Release\HTML Colors.csproj.GenerateResource.Cache
-C:\Portable Files\Git\HTML-Colors\bin\Release\HTML Colors.exe
-C:\Portable Files\Git\HTML-Colors\bin\Release\HTML Colors.pdb
-C:\Portable Files\Git\HTML-Colors\obj\Release\HTML Colors.csprojResolveAssemblyReference.cache
-C:\Portable Files\Git\HTML-Colors\obj\Release\HTML_Colors.Form1.resources
-C:\Portable Files\Git\HTML-Colors\obj\Release\HTML_Colors.Properties.Resources.resources
-C:\Portable Files\Git\HTML-Colors\obj\Release\HTML_Colors.ScreenColor.resources
-C:\Portable Files\Git\HTML-Colors\obj\Release\HTML Colors.csproj.GenerateResource.Cache
-C:\Portable Files\Git\HTML-Colors\obj\Release\HTML Colors.exe
-C:\Portable Files\Git\HTML-Colors\obj\Release\HTML Colors.pdb
